@@ -64,7 +64,7 @@ public final class AttestationHooks {
     }
 
     public static void initApplicationBeforeOnCreate(Application app) {
-        if (GmsInfo.PACKAGE_GMS.equals(app.getPackageName()) &&
+        if ("com.google.android.gms".equals(app.getPackageName()) &&
                 PROCESS_UNSTABLE.equals(Application.getProcessName())) {
             sIsGms = true;
             spoofBuildGms();
